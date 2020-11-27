@@ -1,10 +1,11 @@
 <template>
   <div id="menu">
-    <div class="container" data-handler>
-      <div class="menu-icon" @click="handleClick" v-touch:tap="handleClick" v-touch:end="handleMouseleave">
+    <div ref="root" class="container" data-handler>
+      <div class="menu-icon" @mouseenter="handleClick">
         <img :src="require('../assets/images/more.png')"/>
       </div>
-
+      <div class="menu-mouse-range">
+      </div>
       <div class="menu-layout" :class="{active: isActive}" @mouseleave="handleMouseleave">
           <div class="menu-content" >
             <div class="menu-item">
@@ -51,6 +52,17 @@ export default {
   methods: {
     handleClick: function () {
       this.active = true;
+      const vm = this;
+      const rootRef = this.$refs.root;
+
+      let checkMouseLeave = (e) => {
+        if (rootRef
+            && !rootRef.contains(e.target)) {
+              vm.active = false;
+              window.removeEventListener('mousemove', checkMouseLeave)
+            }
+        }
+        window.addEventListener('mousemove', checkMouseLeave)
     },
     handleMouseleave: function () {
       this.active = false;
@@ -155,14 +167,14 @@ export default {
   padding-top: 34px;
   position: absolute;
   right: -34px;
-  top: -34px;
+  top: -10px;
   max-width: 205px;
   width: 205px;
   max-height: 230px;
   height: 230px;
   background-color: white;
   border-radius: 5px;
-  opacity: 0.5;
+  opacity: 0;
   border: 1px solid $colorLighterGrey;
   box-shadow: 0 2px 6px 0 $colorMenuShadow;
 }
