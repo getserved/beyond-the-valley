@@ -22,7 +22,7 @@ export default {
   components: {
     Form,
     Events
-  }
+  },
 }
 </script>
 
@@ -96,7 +96,17 @@ html{
 #body{
   margin-top: 34px;
 }
-
+a, *:focus,*:hover{
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 @media only screen and (max-width: 792px) {
   #events{
     .content{

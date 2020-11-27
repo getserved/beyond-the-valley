@@ -1,11 +1,11 @@
 <template>
-  <label id="menu">
-    <div class="container">
-      <div class="menu-icon" @click="handleClick">
+  <div id="menu">
+    <div class="container" data-handler>
+      <div class="menu-icon" @click="handleClick" v-touch:tap="handleClick" v-touch:end="handleMouseleave">
         <img :src="require('../assets/images/more.png')"/>
       </div>
 
-      <div class="menu-layout" data-handler :class="{active: active}" @mouseleave="handleMouseleave">
+      <div class="menu-layout" :class="{active: isActive}" @mouseleave="handleMouseleave">
           <div class="menu-content" >
             <div class="menu-item">
               <span>Create campaign</span>
@@ -23,10 +23,9 @@
               <span>Delete event</span>
             </div>
           </div>
-
       </div>
     </div>
-  </label>
+  </div>
 </template>
 
 <script>
@@ -41,17 +40,17 @@ export default {
       active: false
     }
   },
+  computed:{
+    isActive () {
+      return this.active;
+    }
+  },
   mounted: function () {
-    document.addEventListener("touchend", this.handleTouchEnd, false);
+
   },
   methods: {
     handleClick: function () {
       this.active = true;
-    },
-    handleTouchEnd: function (e) {
-      const target = e.target;
-      const handler = target.closest('[data-handler]');
-      this.active = handler != null;
     },
     handleMouseleave: function () {
       this.active = false;
@@ -66,7 +65,6 @@ export default {
 }
 .container{
   position: relative;
-
 }
 .menu-icon{
   position: relative;
@@ -97,6 +95,13 @@ export default {
   }
 
   .menu-item{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     max-height: 40px;
     height: 40px;
     padding-left: 24px;
