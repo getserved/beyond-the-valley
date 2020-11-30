@@ -33,6 +33,12 @@
 
 export default {
   name: 'Menu',
+  props:{
+    isMenuHover: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
 
   },
@@ -54,11 +60,13 @@ export default {
       this.active = true;
       const vm = this;
       const rootRef = this.$refs.root;
+      this.$parent.setMenuHover(true);
 
       let checkMouseLeave = (e) => {
         if (rootRef
             && !rootRef.contains(e.target)) {
               vm.active = false;
+              this.$parent.setMenuHover(false);
               window.removeEventListener('mousemove', checkMouseLeave)
             }
         }
@@ -66,6 +74,7 @@ export default {
     },
     handleMouseleave: function () {
       this.active = false;
+      this.$parent.setMenuHover(false);
     }
   }
 }

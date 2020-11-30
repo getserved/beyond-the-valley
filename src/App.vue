@@ -107,9 +107,22 @@ a, *:focus,*:hover{
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-@media only screen and (max-width: 1302px) {
+@media only screen and (max-width: 1372px) {
   body{
     margin: 0 8px;
+  }
+  #events > .container{
+    max-height: 100%;
+    min-height: auto;
+  }
+  #events .event:nth-child(3n+2){
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #events  .event{
+    flex: 1 1 30%;
+    min-width: 200px;
+    min-height: auto;
   }
   #app > .container{
     margin: 0 36px;
@@ -121,11 +134,26 @@ a, *:focus,*:hover{
     }
   }
 }
-@media only screen and (max-width: 848px) {
+
+@media only screen and (max-width: 828px) {
   #events{
     .content{
       justify-content: center;
     }
+
+    .event{
+      flex: 1 1 45%;
+    }
+  }
+  #events .event:nth-child(3n+2){
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #events .event:nth-child(2n){
+    margin-left: 10px;
+  }
+  #events .event:nth-child(2n+1){
+    margin-right: 10px;
   }
   #form .container{
     .event-btn{
@@ -241,6 +269,12 @@ a, *:focus,*:hover{
     .menu{
       right: 20px;
     }
+  }
+  #events .event:nth-child(2n){
+    margin-left: 0px;
+  }
+  #events .event:nth-child(2n+1){
+    margin-right: 0px;
   }
 }
 @media only screen and (max-width: 452px) {

@@ -1,6 +1,6 @@
 <template>
   <div id="event-item">
-    <div class="container">
+    <div class="container" :class="{menuHover: isMenuHover}">
       <div class="content">
         <div class="bg-container">
           <div class="view-event">
@@ -18,7 +18,7 @@
             <span>{{subtitle}}</span>
           </div>
         </div>
-        <div class="menu">
+        <div class="menu" >
           <Menu />
         </div>
       </div>
@@ -34,27 +34,61 @@ export default {
   props: {
     background: String,
     title: String,
-    subtitle: String
+    subtitle: String,
+  },
+  data(){
+    return {
+      isMenuHover: false
+    }
   },
   components: {
     Menu
+  },
+  methods: {
+    setMenuHover: function(val){
+      this.isMenuHover = val;
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
 .container{
-  max-width: 378px;
+  max-width: 380px;
   max-height: 315px;
-  min-height: 248px;
+  min-height: 250px;
   width: 100%;
   height: 100%;
   background-color: white;
-  border-radius: 4px;
-  border: 1px solid $colorLighterGrey;
-  //box-shadow: 2px 0px 40px 0px $colorShadow;
   text-align: left;
   position: relative;
+  border-radius: 4px;
+
+  &:before{
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 4px;
+    border: 1px solid $colorLighterGrey;
+  }
+
+  &:hover:not(.menuHover){
+    box-shadow: 2px 0px 40px 0px $colorShadow;
+
+    > .content > .bg-container{
+
+      &:after{
+        opacity: .9;
+      }
+
+      > .view-event{
+        display: flex;
+      }
+    }
+  }
 }
 
 .content{
@@ -72,29 +106,22 @@ export default {
     z-index: 3;
     background-color: $colorEventHover;
     display: block;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
-  &:hover {
 
-    > .bg-container:after{
-      opacity: .9;
-    }
-
-    > .bg-container > .view-event{
-      display: flex;
-    }
-  }
 }
 
 .bg-container{
+  background-color: #666666;
   background-image: url('../assets/images/bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
 
   .view-event{
     display: flex;
@@ -173,6 +200,14 @@ export default {
   font-size: 16px;
   line-height: 25px;
   color: $colorTextSubtitle;
+
+  span{
+    max-width: 320px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .menu{

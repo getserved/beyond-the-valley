@@ -108,7 +108,7 @@ export default {
   font-weight: 500;
   position: relative;
   background-color: $colorBtn;
-  border: 1px solid $colorBtnBorder;
+  border: 1px solid $colorBtn;
   border-radius: 3px;
   outline: none;
   padding: 0;
@@ -128,6 +128,7 @@ export default {
 
   &:hover{
     background-color: $colorBtnHover;
+    border: 1px solid $colorBtnHover;
   }
 
   &:before{
