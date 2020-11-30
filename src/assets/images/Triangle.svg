@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="48px" height="29px" viewbox="0 0 48 29" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="2" />
+      <feGaussianBlur stdDeviation="3" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.89411765 0 0 0 0 0.8980392 0 0 0 0 0.90588236 0 0 0 1 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+    <path d="M14.7059 0L29.4118 10.1788L0 10.1788L14.7059 0Z" transform="translate(9 7)" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="Triangle" filter="url(#filter_1)">
+    <use stroke="none" fill="#FFFFFF" xlink:href="#path_1" fill-rule="evenodd" />
+    <g clip-path="url(#clip_1)">
+      <use xlink:href="#path_1" fill="none" stroke="#D4D8E1" stroke-width="2" />
+    </g>
+  </g>
+</svg>

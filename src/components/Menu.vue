@@ -6,6 +6,7 @@
       </div>
       <div class="menu-mouse-range">
       </div>
+
       <div class="menu-layout" :class="{active: isActive}" @mouseleave="handleMouseleave">
           <div class="menu-content" >
             <div class="menu-item">
@@ -82,7 +83,7 @@ export default {
 
 <style scoped lang="scss">
 #menu{
-
+  cursor: pointer;
 }
 .container{
   position: relative;
@@ -90,18 +91,16 @@ export default {
 .menu-icon{
   position: relative;
   z-index: 10;
-  cursor: pointer;
 }
 .menu-layout{
   display: none;
   position: absolute;
   right: -33px;
-  top: 34px;
-  max-width: 205px;
-  width: 205px;
-  max-height: 200px;
-  height: 200px;
-  padding: 24px 0;
+  top: 31px;
+  max-width: 203px;
+  width: 203px;
+  max-height: 223px;
+  height: 223px;
   background-color: white;
   border-radius: 5px;
   border: 1px solid $colorLighterGrey;
@@ -110,28 +109,35 @@ export default {
   &.active{
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+
+    &:before {
+      content: url("../assets/images/Triangle.svg?inline");
+      position: absolute;
+      right: 8px;
+      top: -15px;
+      width: 50px;
+      height: 50px;
+      z-index:5;
+    }
   }
 
   .menu-content{
-
+    position:relative;
+    border-radius: 5px;
+    background-color: white;
+    padding: 12.5px 0;
+    z-index:5;
   }
 
   .menu-item{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
     max-height: 40px;
     height: 40px;
     padding-left: 24px;
     padding-right: 24px;
     background: white;
     display: flex;
-
+    position: relative;
+    z-index: 5;
 
     span{
       color: $colorMenuText;
@@ -151,28 +157,6 @@ export default {
 
     }
   }
-
-  &:before {
-    position: absolute;
-    top: -5px;
-    right: 28px;
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: white;
-    transform: rotate(-45deg);
-    border: 1px solid $colorLighterGrey;
-    box-shadow: 0 2px 6px 0 $colorMenuShadow;
-  }
-  &:after {
-    position: absolute;
-    top: 0px;
-    right: 24px;
-    content: '';
-    width: 20px;
-    height: 20px;
-    background: white;
-  }
 }
 .menu-mouse-range{
   padding-top: 34px;
@@ -186,7 +170,5 @@ export default {
   background-color: white;
   border-radius: 5px;
   opacity: 0;
-  border: 1px solid $colorLighterGrey;
-  box-shadow: 0 2px 6px 0 $colorMenuShadow;
 }
 </style>

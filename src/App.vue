@@ -96,6 +96,7 @@ html{
 #body{
   margin-top: 35px;
 }
+/*
 a, *:focus,*:hover{
   outline: none;
   -webkit-touch-callout: none;
@@ -107,6 +108,7 @@ a, *:focus,*:hover{
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+*/
 @media only screen and (max-width: 1372px) {
   body{
     margin: 0 8px;
