@@ -3,6 +3,9 @@
     <div class="container" :class="{menuHover: isMenuHover}">
       <div class="content">
         <div class="bg-container">
+          <div class="menu" >
+            <Menu />
+          </div>
           <div class="bg-content">
 
           </div>
@@ -21,9 +24,7 @@
             <span>{{subtitle}}</span>
           </div>
         </div>
-        <div class="menu" >
-          <Menu />
-        </div>
+
       </div>
     </div>
   </div>
@@ -91,7 +92,7 @@ export default {
         }
       }
       > .view-event{
-        display: flex;
+        opacity: 1;
       }
     }
 
@@ -147,9 +148,11 @@ export default {
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    display: none;
+    display: flex;
     z-index: 5;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
 
     span{
       margin: auto;
@@ -234,7 +237,6 @@ export default {
   position: absolute;
   right: 24px;
   top: 20px;
-  cursor: pointer;
   z-index: 5;
 }
 </style>

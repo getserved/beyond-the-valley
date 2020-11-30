@@ -82,7 +82,7 @@ export default {
 
 <style scoped lang="scss">
 #menu{
-  cursor: pointer;
+
 }
 .container{
   position: relative;
@@ -90,6 +90,7 @@ export default {
 .menu-icon{
   position: relative;
   z-index: 10;
+  cursor: pointer;
 }
 .menu-layout{
   display: none;
@@ -109,6 +110,7 @@ export default {
   &.active{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
   }
 
   .menu-content{
