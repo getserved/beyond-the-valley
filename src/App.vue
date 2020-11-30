@@ -284,7 +284,7 @@ a, *:focus,*:hover{
   }
   #events{
     .event{
-      min-width: 304px;
+      min-width: 302px;
       min-height: 250px;
     }
     > .container > .content{
@@ -300,7 +300,6 @@ a, *:focus,*:hover{
 
     .container{
       max-width: 100%;
-      width: calc(100% - 2px);
     }
 
     .inner-content{
@@ -341,10 +340,17 @@ a, *:focus,*:hover{
         }
       }
     }
+    #events{
+      max-width: 302px;
+      width: 100%;
+      margin: auto;
+    }
     #events > .container{
+
+
       .event{
         margin-bottom: 20px;
-        min-width: 300px;
+        min-width: 302px;
         min-height: 250px;
       }
 
