@@ -259,6 +259,11 @@ a, *:focus,*:hover{
         width: 100%;
     }
 
+    > .container .menu{
+      top: 14px;
+      right: 14px;
+    }
+
     .container{
       max-width: 100%;
       width: calc(100% - 2px);
@@ -317,9 +322,6 @@ a, *:focus,*:hover{
       .icon{
         width: 22px;
         height: 22px;
-      }
-      .menu{
-        right: 12px;
       }
     }
 

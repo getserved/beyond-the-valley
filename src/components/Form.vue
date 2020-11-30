@@ -89,7 +89,7 @@ export default {
   position: relative;
 
   &:focus{
-    color: $colorTextInputFocus;
+    color: $colorTextInputTextFocus;
     border: 1px solid $colorTextInputFocus;
     box-shadow: 0 0 0 3px $colorTextInputFocusShadow;
   }
