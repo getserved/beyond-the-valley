@@ -59,11 +59,14 @@ export default {
 }
 html{
   background-color: $colorPage;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'Graphik';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+}
+body{
+  overflow:hidden;
 }
 #app {
 
@@ -98,7 +101,6 @@ html{
 #body{
   margin-top: 35px;
 }
-/*
 a, *:focus,*:hover{
   outline: none;
   -webkit-touch-callout: none;
@@ -110,7 +112,7 @@ a, *:focus,*:hover{
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-*/
+
 @media only screen and (max-width: 1372px) {
   body{
     margin: 0 8px;
@@ -264,7 +266,7 @@ a, *:focus,*:hover{
 
     > .content{
       max-width: 380px;
-      min-width: 320px;
+      min-width: 302px;
       width: 380px;
       margin: auto;
     }

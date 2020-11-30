@@ -207,6 +207,7 @@ export default {
   line-height: 25px;
   color: $colorTextTitle;
   max-width: 320px;
+  margin-bottom: 7px;
 
   span{
     max-width: 320px;
