@@ -60,7 +60,7 @@ export default {
 .container{
   max-width: 380px;
   max-height: 315px;
-  min-height: 250px;
+  min-height: 150px;
   width: 100%;
   height: 100%;
   background-color: white;

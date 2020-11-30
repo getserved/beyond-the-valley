@@ -141,12 +141,8 @@ a, *:focus,*:hover{
 
 @media only screen and (max-width: 828px) {
   #events{
-    .content{
-      justify-content: center;
-    }
-
     .event{
-      flex: 1 1 45%;
+      flex: 0 0 33%;
     }
   }
   #events .event:nth-child(3n+2){
@@ -158,6 +154,9 @@ a, *:focus,*:hover{
   }
   #events .event:nth-child(2n+1){
     margin-right: 10px;
+  }
+  #events .container{
+    min-height: 150px;
   }
   #form .container{
     .event-btn{
@@ -193,6 +192,7 @@ a, *:focus,*:hover{
     }
   }
 }
+
 @media only screen and (max-width: 521px) {
   #app{
     margin-top: 30px;
@@ -261,7 +261,6 @@ a, *:focus,*:hover{
   #events > .container{
     flex-direction: column;
     justify-content: center;
-    overflow-x: hidden;
 
     > .content{
       max-width: 380px;
@@ -270,6 +269,9 @@ a, *:focus,*:hover{
       margin: auto;
     }
 
+    .event{
+      flex: 1 1 33%;
+    }
     .menu{
       right: 20px;
     }
@@ -292,8 +294,6 @@ a, *:focus,*:hover{
       min-height: 250px;
     }
     > .container > .content{
-        min-width: 100%;
-        max-width: 100%;
         width: 100%;
     }
 
