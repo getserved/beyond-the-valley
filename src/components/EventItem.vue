@@ -66,6 +66,7 @@ export default {
   text-align: left;
   position: relative;
   border-radius: 4px;
+  transition: box-shadow 0.3s ease-in-out;
 
   &:before{
     content: "";
