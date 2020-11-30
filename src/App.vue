@@ -85,7 +85,7 @@ html{
 
   &:after{
     content: "";
-    width: 100%;
+    width: 99.1870%;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -94,7 +94,7 @@ html{
   }
 }
 #body{
-  margin-top: 34px;
+  margin-top: 35px;
 }
 a, *:focus,*:hover{
   outline: none;
@@ -107,7 +107,21 @@ a, *:focus,*:hover{
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-@media only screen and (max-width: 792px) {
+@media only screen and (max-width: 1302px) {
+  body{
+    margin: 0 8px;
+  }
+  #app > .container{
+    margin: 0 36px;
+
+    > .content{
+      max-width: 1230px;
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+@media only screen and (max-width: 848px) {
   #events{
     .content{
       justify-content: center;
@@ -151,12 +165,17 @@ a, *:focus,*:hover{
   #app{
     margin-top: 30px;
   }
-  body{
-    margin: 0 8px;
+
+  #app > .container{
+    margin: 0 5.346535% 0 4.753%;
   }
-  $header-margin: 0 5.37428vw;
   #header{
-    margin: $header-margin;
+
+    padding-bottom: 31px;
+
+    &:after{
+      width: 100%;
+    }
   }
 
   #form .container{
@@ -166,11 +185,11 @@ a, *:focus,*:hover{
 
 
     .header{
-      padding-bottom:20px;
+      padding-bottom:19px;
     }
 
     .event-btn{
-      width: 140px;
+      width: 141px;
 
       &:before{
         display: none;
@@ -180,12 +199,15 @@ a, *:focus,*:hover{
     .search{
       width: 100%;
       .search-input{
-        width: calc(100% - 45px);
+        width: calc(100% - 46px);
+        max-width: 253px;
         min-width: 100px;
       }
     }
 
-
+    .content{
+      justify-content: space-between;
+    }
     .event-btn{
       padding: 0;
 
@@ -221,12 +243,16 @@ a, *:focus,*:hover{
     }
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 452px) {
   $header-margin: 0 0;
-  #header{
-    margin: $header-margin;
+  #app > .container{
+    margin: 0px;
   }
   #events{
+    .event{
+      min-width: 304px;
+      min-height: 250px;
+    }
     > .container > .content{
         min-width: 100%;
         max-width: 100%;
@@ -257,7 +283,7 @@ a, *:focus,*:hover{
     }
     #form .container{
       .header{
-        padding-bottom: 12px;
+        padding-bottom: 13px;
       }
 
       .event-btn {

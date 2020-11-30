@@ -40,7 +40,7 @@ export default {
 .event{
   max-width: 380px;
   flex: 1 1 33%;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
   min-width: 380px;
   min-height: 315px;
 }

@@ -83,7 +83,7 @@ export default {
   line-height: 18px;
   position: relative;
   padding: 0 0 0 45px;
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid $colorLighterGrey;
   outline: none;
   position: relative;
@@ -91,7 +91,7 @@ export default {
   &:focus{
     color: $colorTextInputFocus;
     border: 1px solid $colorTextInputFocus;
-    box-shadow: 0 0 3px 0 $colorTextInputFocus;
+    box-shadow: 0 0 0 3px $colorTextInputFocusShadow;
   }
 
   &::placeholder{
@@ -109,7 +109,7 @@ export default {
   position: relative;
   background-color: $colorBtn;
   border: 1px solid $colorBtnBorder;
-  border-radius: 5px;
+  border-radius: 3px;
   outline: none;
   padding: 0;
   cursor: pointer;

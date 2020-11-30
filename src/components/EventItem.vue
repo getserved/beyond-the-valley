@@ -50,7 +50,7 @@ export default {
   width: 100%;
   height: 100%;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid $colorLighterGrey;
   //box-shadow: 2px 0px 40px 0px $colorShadow;
   text-align: left;
@@ -60,21 +60,26 @@ export default {
 .content{
   height: 100%;
 
+  > .bg-container:after{
+    opacity: 0;
+    transition: .3s opacity ease-in-out;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: $colorEventHover;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
   &:hover {
 
     > .bg-container:after{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 3;
-      background-color: $colorEventHover;
-      opacity: .5;
-      display: block;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      opacity: .9;
     }
 
     > .bg-container > .view-event{
@@ -102,7 +107,7 @@ export default {
     color: white;
     font-weight: 500;
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 3px;
     position: absolute;
     left: 50%;
     top: 50%;
