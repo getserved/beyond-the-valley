@@ -60,11 +60,13 @@ export default {
 html{
   background-color: $colorPage;
   overflow-x: hidden;
-}
-#app {
-  font-family: 'Graphick';
+  font-family: 'Graphik';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+#app {
+
   text-align: center;
   color: #2c3e50;
   margin-top: 42px;
