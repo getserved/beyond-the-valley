@@ -59,14 +59,12 @@ export default {
 }
 html{
   background-color: $colorPage;
-  overflow: hidden;
+  overflow-x: hidden;
+  height: 100%;
   font-family: 'Graphik';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-}
-body{
-  overflow:hidden;
 }
 #app {
 
