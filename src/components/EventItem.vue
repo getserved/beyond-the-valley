@@ -3,6 +3,9 @@
     <div class="container" :class="{menuHover: isMenuHover}">
       <div class="content">
         <div class="bg-container">
+          <div class="bg-content">
+
+          </div>
           <div class="view-event">
             <span>View event</span>
           </div>
@@ -79,52 +82,55 @@ export default {
     box-shadow: 2px 0px 40px 0px $colorShadow;
 
     > .content > .bg-container{
+      > .bg-content{
+        opacity: 0.1;
 
-      &:after{
-        opacity: .9;
+        &:after{
+          opacity: 1;
+        }
       }
-
       > .view-event{
         display: flex;
       }
     }
+
   }
 }
 
 .content{
   height: 100%;
 
-  > .bg-container:after{
-    opacity: 0;
-    transition: .3s opacity ease-in-out;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 3;
+  > .bg-container{
     background-color: $colorEventHover;
-    display: block;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+
+    > .bg-content:after{
+     opacity: 0;
+     transition: .3s opacity ease-in-out;
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+
+     display: block;
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+   }
   }
 
 
 }
-
 .bg-container{
-  background-color: #666666;
-  background-image: url('../assets/images/bg.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  width: 100%;
+  position: relative;
 
   .view-event{
-    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     max-width: 120px;
     width: 120px;
     max-height: 40px;
@@ -149,12 +155,6 @@ export default {
     }
   }
 
-  &:before {
-    content: '';
-    display: block;
-    padding: 53.95% 0 0;
-  }
-
   .icon{
     display: flex;
     position: absolute;
@@ -174,6 +174,23 @@ export default {
     img{
       margin: auto auto;
     }
+  }
+}
+.bg-content{
+  background-color: #666666;
+  background-image: url('../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+  transition: .3s opacity ease-in-out;
+
+  &:before {
+    content: '';
+    display: block;
+    padding: 53.95% 0 0;
   }
 }
 
