@@ -13,7 +13,9 @@
             <span>View event</span>
           </div>
           <div class="icon">
-            <img src="../assets/images/icon.png"/>
+            <div class="svg-wrapper">
+
+            </div>
           </div>
         </div>
         <div class="inner-content">
@@ -141,8 +143,9 @@ export default {
     line-height: 18px;
     color: white;
     font-weight: 500;
-    border: 1px solid white;
-    border-radius: 3px;
+    margin-left: 5px;
+    margin-top: 1px;
+
     position: absolute;
     left: 50%;
     top: 50%;
@@ -154,6 +157,17 @@ export default {
     opacity: 0;
     transition: opacity .3s ease-in-out;
 
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+
     span{
       margin: auto;
     }
@@ -162,21 +176,43 @@ export default {
   .icon{
     display: flex;
     position: absolute;
-    left: 28px;
+    left: 30px;
     bottom: 0px;
     transform: translateY(50%);
-    max-width: 28px;
-    max-height: 28px;
-    width: 28px;
-    height: 28px;
+    max-width: 30px;
+    max-height: 30px;
+    width: 30px;
+    height: 30px;
     background-color: white;
-    border: 1px solid $colorLighterGrey;
     border-radius: 50%;
     pointer-events: none;
     z-index: 5;
+    display: flex;
 
-    img{
-      margin: auto auto;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border-radius:50%;
+      border: 1px solid $colorLighterGrey;
+    }
+
+    .svg-wrapper{
+      width: 13px;
+      height: 12px;
+      margin: auto;
+
+      &:before {
+         content: url("../assets/images/logo-m.svg?inline");
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         z-index:5;
+      }
     }
   }
 }
@@ -200,13 +236,13 @@ export default {
 
 .inner-content{
   max-width: 320px;
-  margin: 24px 30px 30px 30px;
+  padding: 26px 31px 31px 31px;
 }
 .title{
   font-size: 20px;
   line-height: 25px;
   color: $colorTextTitle;
-  max-width: 320px;
+  max-width: 315px;
   margin-bottom: 7px;
 
   span{
@@ -223,6 +259,7 @@ export default {
   line-height: 25px;
   color: $colorTextSubtitle;
 
+
   span{
     max-width: 320px;
     display: block;
@@ -236,7 +273,7 @@ export default {
   width: auto;
   height: auto;
   position: absolute;
-  right: 24px;
+  right: 20px;
   top: 20px;
   z-index: 5;
 }

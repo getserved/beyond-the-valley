@@ -29,19 +29,32 @@ export default {
 
 <style scoped lang="scss">
 .container{
-  display: flex;
+  width: 100%;
 }
 .content{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 0 15px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  justify-items: center;
 }
 .event{
   max-width: 380px;
-  flex: 1 1 33%;
+  width: 100%;
   margin-bottom: 31px;
-  min-width: 380px;
-  min-height: 315px;
+  min-width: 302px;
+  max-height: 315px;
+
+  &:nth-child(3n+1){
+    justify-self: start;
+  }
+
+  &:nth-child(3n+2){
+    justify-self: center;
+  }
+
+  &:nth-child(3n+3){
+    justify-self: end;
+  }
+
 }
 </style>

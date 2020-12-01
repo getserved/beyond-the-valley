@@ -60,6 +60,7 @@ export default {
 html{
   background-color: $colorPage;
   overflow-x: hidden;
+  width: 100%;
   height: 100%;
   font-family: 'Graphik';
   -webkit-font-smoothing: antialiased;
@@ -67,10 +68,13 @@ html{
   font-size: 16px;
 }
 #app {
-
   text-align: center;
   color: #2c3e50;
   margin-top: 42px;
+}
+
+body{
+  margin: 0 9px;
 }
 
 #app > .container{
@@ -97,7 +101,7 @@ html{
   }
 }
 #body{
-  margin-top: 35px;
+  margin-top: 34px;
 }
 a, *:focus,*:hover{
   outline: none;
@@ -110,77 +114,106 @@ a, *:focus,*:hover{
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
-@media only screen and (max-width: 1372px) {
-  body{
-    margin: 0 8px;
-  }
-  #events > .container{
-    max-height: 100%;
-    min-height: auto;
-  }
-  #events .event:nth-child(3n+2){
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  #events  .event{
-    flex: 1 1 30%;
-    min-width: 200px;
-    min-height: auto;
-  }
+@media only screen and (max-width: 1373px) {
   #app > .container{
-    margin: 0 36px;
 
     > .content{
-      max-width: 1230px;
-      width: 100%;
+      margin: auto auto auto 62px;
+    }
+  }
+
+}
+@media only screen and (max-width: 1210px) {
+  #app > .container{
+
+    > .content{
       margin: auto;
     }
   }
-}
+  #events > .container > .content{
+    grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
 
-@media only screen and (max-width: 828px) {
-  #events{
-    .event{
-      flex: 0 0 33%;
+    > .event{
+      min-width: 302px;
     }
   }
-  #events .event:nth-child(3n+2){
-    margin-left: 0px;
-    margin-right: 0px;
+}
+@media only screen and (max-width: 1024px) {
+  #events > .container > .content{
+    grid-template-columns: repeat(2, 1fr);
+
+    > .event{
+
+      &:nth-child(3n+1){
+        justify-self: auto;
+      }
+
+      &:nth-child(3n+2){
+        justify-self: auto;
+      }
+
+      &:nth-child(3n+3){
+        justify-self: auto;
+      }
+
+      &:nth-child(2n+1){
+        justify-self: start;
+      }
+
+      &:nth-child(2n+2){
+        justify-self: end;
+      }
+    }
   }
-  #events .event:nth-child(2n){
-    margin-left: 10px;
+}
+@media only screen and (max-width: 764px) {
+  #events > .container > .content{
+    grid-template-columns: repeat(1, 1fr);
+
+    > .event{
+
+      &:nth-child(3n+1){
+        justify-self: auto;
+      }
+
+      &:nth-child(3n+2){
+        justify-self: auto;
+      }
+
+      &:nth-child(3n+3){
+        justify-self: auto;
+      }
+
+      &:nth-child(2n+1){
+        justify-self: auto;
+      }
+
+      &:nth-child(2n+2){
+        justify-self: auto;
+      }
+    }
   }
-  #events .event:nth-child(2n+1){
-    margin-right: 10px;
-  }
-  #events .container{
-    min-height: 150px;
-  }
+
   #form .container{
+    .search{
+      min-width: 200px;
+      margin-left: 10px;
+    }
     .event-btn{
-      width: 140px;
+      width: 141px;
 
       &:before{
         display: none;
       }
     }
 
-    .search{
-      width: 100%;
-      .search-input{
-        width: calc(100% - 45px);
-        min-width: 100px;
-      }
-    }
-
-
     .event-btn{
       padding: 0;
 
       span{
         padding: 0;
+        max-width: 115px;
+        text-align: center;
       }
 
       .small{
@@ -192,17 +225,18 @@ a, *:focus,*:hover{
     }
   }
 }
-
 @media only screen and (max-width: 521px) {
+  body{
+    margin: 0 9px;
+  }
   #app{
     margin-top: 30px;
   }
 
   #app > .container{
-    margin: 0 5.346535% 0 4.753%;
+    margin: 0 26px;
   }
   #header{
-
     padding-bottom: 31px;
 
     &:after{
@@ -217,132 +251,89 @@ a, *:focus,*:hover{
 
 
     .header{
-      padding-bottom:19px;
-    }
+      margin-left: -3px;
+      margin-top: 0px;
+      padding-bottom: 26px;
 
-    .event-btn{
-      width: 141px;
-
-      &:before{
-        display: none;
+      h2{
+        max-width: 374px;
+        line-height: 33px;
       }
     }
 
     .search{
       width: 100%;
+      margin-left: 0px;
+
       .search-input{
-        width: calc(100% - 46px);
-        max-width: 253px;
+        max-width: 300px;
         min-width: 100px;
+        line-height: 15px;
+
       }
     }
 
     .content{
       justify-content: space-between;
     }
-    .event-btn{
-      padding: 0;
 
-      span{
-        padding: 0;
-      }
-
-      .small{
-        display: inline-block;
-      }
-      .large{
-        display: none;
-      }
-    }
   }
   #body{
     margin-top: 30px;
   }
-  #events > .container{
-    flex-direction: column;
-    justify-content: center;
-
-    > .content{
-      max-width: 380px;
-      min-width: 302px;
-      width: 380px;
-      margin: auto;
-    }
-
-    .event{
-      flex: 1 1 33%;
-    }
-    .menu{
-      right: 20px;
-    }
-  }
-  #events .event:nth-child(2n){
-    margin-left: 0px;
-  }
-  #events .event:nth-child(2n+1){
-    margin-right: 0px;
+  #events > .container > .content{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@media only screen and (max-width: 452px) {
-  $header-margin: 0 0;
-  #app > .container{
-    margin: 0px;
+@media only screen and (max-width: 440px) {
+  #app{
+    margin-top: 24px;
+
+    > .container{
+      margin: 0;
+    }
   }
-  #events{
-    .event{
-      min-width: 302px;
-      min-height: 250px;
+  #header{
+    margin: 0 0;
+  }
+  #body{
+    margin-top: 32px;
+  }
+  #form .container{
+    .header{
+      padding-bottom: 13px;
     }
-    > .container > .content{
+
+    .event-btn {
+      max-wdith: 79px;
+      min-width: 79px;
+      width: 79px;
+    }
+
+    .search{
+      .search-input{
         width: 100%;
-    }
-
-    > .container .menu{
-      top: 14px;
-      right: 14px;
-    }
-
-    .container{
-      max-width: 100%;
-    }
-
-    .inner-content{
-      margin: 24px;
-    }
-
-    .title span{
-      max-width: 100%;
+        padding-left: 12px;
+        padding-top: 2px;
+      }
+      &:before{
+        display: none;
+      }
     }
   }
 }
 @media only screen and (max-width: 320px) {
-    #app{
-      margin-top: 24px;
-    }
-    #header{
-      margin: 0 0;
-      padding-bottom: 30px;
-    }
     #form .container{
-      .header{
-        padding-bottom: 13px;
+      .event-btn .small{
+        width: 100%;
+        max-width: 64px;
+        margin-left: 2px;
+        margin-top: -1px;
+        text-align: center;
       }
-
-      .event-btn {
-        max-wdith: 79px;
-        min-width: 79px;
-        width: 79px;
-      }
-
-      .search{
-        .search-input{
-          width: calc(100% - 12px);
-          padding-left: 12px;
-        }
-        &:before{
-          display: none;
-        }
-      }
+    }
+    #form .container .header{
+      padding-bottom: 20px;
     }
     #events{
       max-width: 302px;
@@ -351,23 +342,60 @@ a, *:focus,*:hover{
     }
     #events > .container{
 
+      .content{
+        max-width: 302px;
+        width: 100%;
+      }
 
       .event{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         min-width: 302px;
+        max-height: 250px;
         min-height: 250px;
       }
 
+      .bg-container{
+        height: 162.7px;
+      }
+
       .inner-content{
-        margin: 16px 24px 18px 24px;
-        max-width: 245px;
+        padding: 16.47px 23.84px 18px 23.84px;
+        max-width: 235px;
+
+        .title{
+          margin-bottom: 2.97px;
+        }
       }
 
       .icon{
-        width: 22px;
-        height: 22px;
+        width: 23.84px;
+        height: 23.81px;
+        left: 23.84px;
+        display: flex;
+
+        .svg-wrapper{
+          margin:auto;
+
+
+          &:before {
+            content: url("./assets/images/logo-s.svg?inline");
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index:5;
+          }
+        }
+
+        svg{
+
+            width: 100%;
+            height: 100%;
+        }
+      }
+
+      .menu{
+        right: 14px;
+        top: 14px;
       }
     }
-
 }
 </style>

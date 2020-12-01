@@ -2,7 +2,11 @@
   <div id="menu">
     <div ref="root" class="container" data-handler>
       <div class="menu-icon" @mouseenter="handleClick">
-        <img :src="require('../assets/images/more.png')"/>
+        <svg width="4px" height="16px" viewbox="0 0 4 16" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g id="more" transform="matrix(-4.371139E-08 -1 1 -4.371139E-08 0 16)">
+            <path d="M2 12C3.1 12 4 12.9 4 14C4 15.1 3.1 16 2 16C0.9 16 0 15.1 0 14C0 12.9 0.9 12 2 12L2 12ZM2 10C0.9 10 0 9.1 0 8C0 6.9 0.9 6 2 6C3.1 6 4 6.9 4 8C4 9.1 3.1 10 2 10L2 10ZM2 4C0.9 4 0 3.1 0 2C0 0.9 0.9 0 2 0C3.1 0 4 0.9 4 2C4 3.1 3.1 4 2 4L2 4Z" transform="matrix(-4.371139E-08 1 1 4.371139E-08 0 0)" id="Shape" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+          </g>
+        </svg>
       </div>
       <div class="menu-mouse-range">
       </div>
@@ -96,14 +100,14 @@ export default {
   display: none;
   position: absolute;
   right: -33px;
-  top: 31px;
+  top: 35px;
   max-width: 203px;
   width: 203px;
   max-height: 223px;
   height: 223px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid $colorLighterGrey;
+  border: 1px solid $colorMenuHoverBorder;
   box-shadow: 0 2px 6px 0 $colorMenuShadow;
 
   &.active{
@@ -113,10 +117,9 @@ export default {
     &:before {
       content: url("../assets/images/Triangle.svg?inline");
       position: absolute;
-      right: 8px;
-      top: -15px;
-      width: 50px;
-      height: 50px;
+      right: 11px;
+      top: -13px;
+
       z-index:5;
     }
   }
@@ -125,15 +128,15 @@ export default {
     position:relative;
     border-radius: 5px;
     background-color: white;
-    padding: 12.5px 0;
+    padding: 15px 0 8px 0;
     z-index:5;
   }
 
   .menu-item{
     max-height: 40px;
     height: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
     background: white;
     display: flex;
     position: relative;

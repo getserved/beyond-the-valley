@@ -36,15 +36,16 @@ export default {
   justify-content: space-between;
 }
 .content{
-  width: auto;
+  width: 100%;
   margin: 0;
   display: flex;
   flex-direction: row;
-
+  justify-content: flex-end;
 }
 .header{
   color: $colorTextTitle;
   text-align: left;
+  margin-top: 8px;
 
   h2{
     margin: auto 0;
@@ -55,38 +56,44 @@ export default {
 }
 .search{
   max-width: 300px;
+  min-width: 300px;
   max-height: 50px;
-  width: 300px;
+  width: 100%;
   height: 50px;
   position: relative;
 
   &:before{
-    content: "";
+    content: url("../assets/images/search.svg?inline");
     display: block;
     width: 16px;
     height: 16px;
     position: absolute;
-    left: 16px;
+    left: 17px;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url('../assets/images/search.png');
     z-index: 2;
     pointer-events: none;
   }
 }
 .search-input{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
   max-height: 50px;
-  width: 253px;
-  height: 48px;
+  max-width: 302px;
+  width: 100%;
+  height: 50px;
   color: $colorTextInput;
   font-size: 14px;
-  line-height: 18px;
+  font-weight: 400;
+  line-height: 15px;
   position: relative;
-  padding: 0 0 0 45px;
-  border-radius: 4px;
+  padding: 3px 0 0 45px;
+  border-radius: 3px;
   border: 1px solid $colorLighterGrey;
   outline: none;
   position: relative;
+  letter-spacing: 0.2px;
 
   &:focus{
     color: $colorTextInputTextFocus;
@@ -99,6 +106,9 @@ export default {
   }
 }
 .event-btn{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
   margin-left: 10px;
   max-width: 190px;
   min-width: 79px;
@@ -116,10 +126,13 @@ export default {
 
   span{
     display: block;
-    padding-left: 45px;
+    padding-left: 47px;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 15px;
     text-align: left;
+    letter-spacing: 0.4px;
+    max-width: 154px;
+    width: 100%;
 
     &.small{
       display: none;
@@ -132,15 +145,13 @@ export default {
   }
 
   &:before{
-    content: "";
+    content: url("../assets/images/add.svg?inline");
     display: block;
     width: 16px;
     height: 16px;
     position: absolute;
-    left: 21px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url('../assets/images/add.png');
+    left: 20px;
+    top: 15px;
     z-index: 2;
     pointer-events: none;
   }
