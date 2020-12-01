@@ -241,8 +241,6 @@ a, *:focus,*:hover{
       .search-input{
         max-width: 300px;
         min-width: 100px;
-        line-height: 15px;
-
       }
     }
 
@@ -286,8 +284,7 @@ a, *:focus,*:hover{
     .search{
       .search-input{
         width: 100%;
-        padding-left: 12px;
-        padding-top: 2px;
+        padding-left: 11px;
       }
       &:before{
         display: none;
