@@ -86,9 +86,9 @@ export default {
   color: $colorTextInput;
   font-size: 14px;
   font-weight: 400;
-  line-height: 15px;
+  line-height: 50px;
   position: relative;
-  padding: 3px 0 0 45px;
+  padding: 3px 0 0 44px;
   border-radius: 3px;
   border: 1px solid $colorLighterGrey;
   outline: none;
@@ -126,9 +126,9 @@ export default {
 
   span{
     display: block;
-    padding-left: 47px;
+    padding-left: 46px;
     font-size: 14px;
-    line-height: 15px;
+    line-height: 50px;
     text-align: left;
     letter-spacing: 0.4px;
     max-width: 154px;

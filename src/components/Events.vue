@@ -34,7 +34,7 @@ export default {
 .content{
   display: grid;
   grid-gap: 0 15px;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
 .event{

@@ -123,7 +123,7 @@ a, *:focus,*:hover{
   }
 
 }
-@media only screen and (max-width: 1210px) {
+@media only screen and (max-width: 1250px) {
   #app > .container{
 
     > .content{
@@ -131,38 +131,10 @@ a, *:focus,*:hover{
     }
   }
   #events > .container > .content{
-    grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 
     > .event{
-      min-width: 302px;
-    }
-  }
-}
-@media only screen and (max-width: 1024px) {
-  #events > .container > .content{
-    grid-template-columns: repeat(2, 1fr);
-
-    > .event{
-
-      &:nth-child(3n+1){
-        justify-self: auto;
-      }
-
-      &:nth-child(3n+2){
-        justify-self: auto;
-      }
-
-      &:nth-child(3n+3){
-        justify-self: auto;
-      }
-
-      &:nth-child(2n+1){
-        justify-self: start;
-      }
-
-      &:nth-child(2n+2){
-        justify-self: end;
-      }
+      min-width: 240px;
     }
   }
 }
