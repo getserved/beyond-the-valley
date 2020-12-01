@@ -256,6 +256,7 @@ a, *:focus,*:hover{
       padding-bottom: 26px;
 
       h2{
+        margin-top: 1px;
         max-width: 374px;
         line-height: 33px;
       }

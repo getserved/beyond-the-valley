@@ -50,7 +50,7 @@ export default {
   h2{
     margin: auto 0;
     font-size: 30px;
-    line-height: 40px;
+    line-height: 33px;
     font-weight: 400;
   }
 }
